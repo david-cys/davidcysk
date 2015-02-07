@@ -1,0 +1,8 @@
+== README
+
+This file will document the development process, in chronological order.
+
+- create rails application and set up database on local machine
+- loosely follow the heroku [getting started guide](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+- init a git repository
+
