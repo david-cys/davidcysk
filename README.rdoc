@@ -4,5 +4,11 @@ This file will document the development process, in chronological order.
 
 - create rails application and set up database on local machine
 - loosely follow the heroku [getting started guide](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+- add haml and rails_12factor to the gemfile
 - init a git repository
 
+- skip procfile and configuring puma because unnecessary
+- push to heroku and github
+- check gitignore
+
+- add testing gems, add basic specs to check that everything is working

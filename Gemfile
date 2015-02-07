@@ -34,18 +34,29 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara', '~> 2.4'
+  gem 'poltergeist', '~> 1.5.1'
+  gem 'database_cleaner'
+  gem 'pry-byebug'
+  gem 'awesome_print'
+  gem 'coolline'
+  gem 'coderay'
+  gem 'pry', '~> 0.10.1'
+end
+
+group :development do
+  gem 'quiet_assets' # hide the get requests in the logs
+  gem 'better_errors' # turn this off while working on AA
+end
+
+group :test do
+  gem 'launchy'
+end
+
+
 group :production do
   gem 'rails_12factor'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
