@@ -79,3 +79,5 @@ __potential user behaviour__
 - Signed in user can attach an avatar to their profile
 - Signed in user can edit their profile
 
+---
+- set up devise, test by going to devise default routes and checking that user is created
