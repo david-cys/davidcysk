@@ -89,5 +89,9 @@ __potential user behaviour__
 - add profile model
 
 ---
+- update homepage so users can sign in and out
+- allow user to create and edit a profile
+
+---
 __misc references__
 http://stackoverflow.com/questions/7114694/should-i-use-uuids-for-resources-in-my-public-api
