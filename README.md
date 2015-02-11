@@ -81,3 +81,10 @@ __potential user behaviour__
 
 ---
 - set up devise, test by going to devise default routes and checking that user is created
+
+---
+- configure and check that factorygirl is working
+
+---
+__misc references__
+http://stackoverflow.com/questions/7114694/should-i-use-uuids-for-resources-in-my-public-api

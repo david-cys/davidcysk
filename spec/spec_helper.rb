@@ -42,6 +42,9 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # factorygirl helpers
+  config.include FactoryGirl::Syntax::Methods
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
