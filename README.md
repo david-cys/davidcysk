@@ -86,5 +86,8 @@ __potential user behaviour__
 - configure and check that factorygirl is working
 
 ---
+- add profile model
+
+---
 __misc references__
 http://stackoverflow.com/questions/7114694/should-i-use-uuids-for-resources-in-my-public-api

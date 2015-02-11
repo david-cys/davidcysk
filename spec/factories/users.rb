@@ -1,8 +1,12 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :user do
     email "tester@example.com"
     password "password"
+
+    factory :user_with_profile do
+      after(:create) do |user|
+        create(:profile, :user => user)
+      end
+    end
   end
 end

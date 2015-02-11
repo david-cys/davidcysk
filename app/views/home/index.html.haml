@@ -1,5 +1,9 @@
 %h2 hello and welcome to the kapi application
 
-%h2 the latest registered user:
+%h2 the latest profile:
 
-%p= @user.email
+- if @profile
+  %p= @profile.user.email
+  %p= @profile.description
+- else
+  %p no profiles found

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @user = User.last
+    @profile = Profile.last
   end
 end
 
