@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise', '~> 3.2.2' # user authentication
 gem 'paperclip', '~> 4.2' # file uploads
+gem 'aws-sdk', '~> 1.5.7'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -38,6 +39,7 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'capybara', '~> 2.4'

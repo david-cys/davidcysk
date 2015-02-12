@@ -28,6 +28,11 @@ GEM
     addressable (2.3.5)
     arel (4.0.2)
     awesome_print (1.2.0)
+    aws-sdk (1.5.8)
+      httparty (~> 0.7)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -67,6 +72,11 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.3.0)
     factory_girl (4.3.0)
@@ -77,6 +87,9 @@ GEM
     haml (4.0.5)
       tilt
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -95,6 +108,7 @@ GEM
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
@@ -186,6 +200,7 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.5)
     warden (1.2.3)
       rack (>= 1.0)
     websocket-driver (0.3.4)
@@ -197,6 +212,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk (~> 1.5.7)
   better_errors
   capybara (~> 2.4)
   coderay
@@ -204,6 +220,7 @@ DEPENDENCIES
   coolline
   database_cleaner
   devise (~> 3.2.2)
+  dotenv-rails
   factory_girl_rails (~> 4.0)
   haml (~> 4.0.5)
   jbuilder (~> 1.2)

@@ -95,12 +95,12 @@ __potential user behaviour__
 
 ---
 - configure paperclip and add avatars for profiles
+- configure s3 for paperclip
+- push to heroku and double check s3 configuration
 
 ---
 next steps
-- configure s3 for paperclip
 - remember to check styles for paperclip image manipulation
-- push to heroku and double check s3 configuration
 - add a search box, and next/previous buttons to browse profiles
 - add tokens to users and profiles
 - spec out the api and tdd it
