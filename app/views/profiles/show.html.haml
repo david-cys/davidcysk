@@ -1,6 +1,10 @@
 %h1 Show profile page
 
 %p
+  Avatar
+  = image_tag @profile.avatar.url(:medium)
+  = image_tag @profile.avatar.url(:thumb)
+%p
   Location:
   = @profile.location
 %p

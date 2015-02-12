@@ -1,6 +1,8 @@
 %h1 Edit profile page
 
-= form_for @profile do |f|
+= form_for @profile, :html => { :multipart => true } do |f|
+  = f.label :avatar
+  = f.file_field :avatar
   = f.label :location
   = f.text_field :location
   = f.label :tagline

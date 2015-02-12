@@ -54,7 +54,11 @@ CREATE TABLE profiles (
     tagline text,
     description text,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    avatar_file_name character varying(255),
+    avatar_content_type character varying(255),
+    avatar_file_size integer,
+    avatar_updated_at timestamp without time zone
 );
 
 
@@ -186,3 +190,5 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20150208085533');
 
 INSERT INTO schema_migrations (version) VALUES ('20150211002027');
+
+INSERT INTO schema_migrations (version) VALUES ('20150212001914');

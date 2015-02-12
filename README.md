@@ -92,6 +92,19 @@ __potential user behaviour__
 - update homepage so users can sign in and out
 - allow user to create and edit a profile
 
+
+---
+- configure paperclip and add avatars for profiles
+
+---
+next steps
+- configure s3 for paperclip
+- remember to check styles for paperclip image manipulation
+- push to heroku and double check s3 configuration
+- add a search box, and next/previous buttons to browse profiles
+- add tokens to users and profiles
+- spec out the api and tdd it
+
 ---
 __misc references__
 http://stackoverflow.com/questions/7114694/should-i-use-uuids-for-resources-in-my-public-api
