@@ -44,15 +44,13 @@ class ProfilesController < ApplicationController
   def search
     @search_query = params[:query]
     @profiles = Profile.
-      where("location ILIKE ? OR tagline ILIKE ? OR description ILIKE ?",
-            "%#{params[:query]}%", "%#{params[:query]}%",
-            "%#{params[:query]}%")
+      where("location ILIKE :query OR tagline ILIKE :query OR description ILIKE :query OR name ILIKE :query", { :query => "%#{params[:query]}%" })
   end
 
   private
   def profile_params
     params.require(:profile).permit(:location, :tagline, :description, :user_id,
-                                    :avatar)
+                                    :avatar, :name)
   end
 end
 

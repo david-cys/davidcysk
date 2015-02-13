@@ -106,10 +106,10 @@ __potential user behaviour__
 - add a search box
 - use where and %LIKE% liberally, its the simplest way
 - %ILIKE% is case insensitive but postgres-specific. worth using.
+- add names to user profiles. there are a few reasons to put it on profiles instead of users: keep the User model mainly for session/login control and Profile model for info for public use, avoid the dreaded nested forms when we make it user-editable.
 
 ---
 next steps
-- users need names! add on profile as display_name maybe?
 - add tokens to users and profiles
 - spec out the api and tdd it
 - add remote image uploading

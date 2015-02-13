@@ -1,0 +1,13 @@
+= form_for @profile, :html => { :multipart => true } do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :avatar
+  = f.file_field :avatar
+  = f.label :location
+  = f.text_field :location
+  = f.label :tagline
+  = f.text_field :tagline
+  = f.label :description
+  = f.text_area :description
+  = f.submit
+

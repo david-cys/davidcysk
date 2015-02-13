@@ -5,6 +5,9 @@
   User:
   = @profile.user.email
 %p
+  Display name:
+  = @profile.display_name
+%p
   Avatar
   = image_tag @profile.avatar.url(:medium)
   = image_tag @profile.avatar.url(:thumb)

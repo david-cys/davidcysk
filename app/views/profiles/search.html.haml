@@ -5,7 +5,7 @@
 %ol
   - @profiles.each do |p|
     %li
-      %p= link_to p.user.email, profile_path(p)
+      %p= link_to p.display_name, profile_path(p)
       %p location: #{p.location}
       %p tagline: #{p.tagline}
       %p description: #{p.description}

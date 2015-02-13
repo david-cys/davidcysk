@@ -10,6 +10,10 @@ class Profile < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\z/
 
+  def display_name
+    name || user.email
+  end
+
   def self.get_random(excluded_profile)
     # this is postgres specific
     Profile.where.not(:id => excluded_profile).order("RANDOM()").last
