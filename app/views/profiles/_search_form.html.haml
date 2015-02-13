@@ -1,0 +1,5 @@
+%h2 search for a profile (case insensitive):
+= form_tag search_profile_path, :method => :get do
+  = label_tag :query
+  = text_field_tag :query
+  = submit_tag "Search"

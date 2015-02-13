@@ -103,8 +103,13 @@ __potential user behaviour__
 - add random profile button and profile index
 
 ---
-next steps
 - add a search box
+- use where and %LIKE% liberally, its the simplest way
+- %ILIKE% is case insensitive but postgres-specific. worth using.
+
+---
+next steps
+- users need names! add on profile as display_name maybe?
 - add tokens to users and profiles
 - spec out the api and tdd it
 - add remote image uploading

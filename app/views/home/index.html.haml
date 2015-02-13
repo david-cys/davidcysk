@@ -1,5 +1,7 @@
 %h2 hello and welcome to the kapi application
 
+= render 'profiles/search_form'
+
 - if user_signed_in?
   - if current_user.profile.nil?
     = link_to "create profile", new_profile_path

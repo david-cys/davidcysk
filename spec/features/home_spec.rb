@@ -123,5 +123,23 @@ feature "Home index page" do
     expect(page).to have_text("Show profile page")
     expect(page).not_to have_text(user2.email)
   end
+
+  scenario "can search for profiles" do
+    user2 = create(:user_with_profile)
+    user2.profile.location = "super secret location"
+    user2.profile.save
+    visit root_path
+    fill_in "Query", :with => "Test location"
+    click_on "Search"
+
+    expect(page).to have_text(@user.email)
+    expect(page).not_to have_text(user2.email)
+
+    fill_in "Query", :with => "super secret location"
+    click_on "Search"
+
+    expect(page).to have_text(user2.email)
+    expect(page).not_to have_text(@user.email)
+  end
 end
 

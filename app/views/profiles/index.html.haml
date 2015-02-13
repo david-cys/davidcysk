@@ -1,3 +1,5 @@
+= render 'profiles/search_form'
+
 %ol
   - @profiles.each do |p|
     %li= link_to p.user.email, profile_path(p)

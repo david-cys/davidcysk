@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :search]
 
   def new
     @profile = Profile.new
@@ -38,6 +38,15 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all.order(:created_at)
+  end
+
+  # ILIKE is postgres-specific
+  def search
+    @search_query = params[:query]
+    @profiles = Profile.
+      where("location ILIKE ? OR tagline ILIKE ? OR description ILIKE ?",
+            "%#{params[:query]}%", "%#{params[:query]}%",
+            "%#{params[:query]}%")
   end
 
   private
