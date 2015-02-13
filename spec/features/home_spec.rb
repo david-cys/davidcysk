@@ -112,5 +112,16 @@ feature "Home index page" do
     expect(page).to have_text("tester_new tagline2")
     expect(page).to have_text("tester_new description2")
   end
+
+  scenario "can browse another profile" do
+    user2 = create(:user_with_profile)
+    visit root_path
+
+    # the last created profile is shown on home#index
+    expect(page).to have_text(user2.email)
+    click_on("random profile")
+    expect(page).to have_text("Show profile page")
+    expect(page).not_to have_text(user2.email)
+  end
 end
 

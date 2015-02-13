@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show]
+  before_filter :authenticate_user!, :except => [:index, :show]
 
   def new
     @profile = Profile.new
@@ -32,9 +32,12 @@ class ProfilesController < ApplicationController
     end
   end
 
-
   def show
     @profile = Profile.find(params[:id])
+  end
+
+  def index
+    @profiles = Profile.all.order(:created_at)
   end
 
   private

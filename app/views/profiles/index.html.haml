@@ -1,0 +1,4 @@
+%ol
+  - @profiles.each do |p|
+    %li= link_to p.user.email, profile_path(p)
+

@@ -1,5 +1,9 @@
+%h3= link_to "profile index", profiles_path
 %h1 Show profile page
 
+%p
+  User:
+  = @profile.user.email
 %p
   Avatar
   = image_tag @profile.avatar.url(:medium)
@@ -13,3 +17,4 @@
 %p
   Description:
   = @profile.description
+

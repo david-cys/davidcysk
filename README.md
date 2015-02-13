@@ -4,6 +4,7 @@ This file will document the development process, in chronological order.
 Every hr is an indication of a separate step or commit
 
 - create rails application and set up database on local machine
+ 
 - loosely follow the heroku [getting started guide](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 - add haml and rails_12factor to the gemfile
 - init a git repository
@@ -92,7 +93,6 @@ __potential user behaviour__
 - update homepage so users can sign in and out
 - allow user to create and edit a profile
 
-
 ---
 - configure paperclip and add avatars for profiles
 - configure s3 for paperclip
@@ -100,10 +100,15 @@ __potential user behaviour__
 - remember to check styles for paperclip image manipulation
 
 ---
+- add random profile button and profile index
+
+---
 next steps
-- add a search box, and next/previous buttons to browse profiles
+- add a search box
 - add tokens to users and profiles
 - spec out the api and tdd it
+- add remote image uploading
+- ? typeahead with api
 
 ---
 __misc references__

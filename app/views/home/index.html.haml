@@ -16,3 +16,6 @@
   %p= @profile.description
 - else
   %p no profiles found
+
+- if @random_profile
+  %h3= link_to "random profile", profile_path(@random_profile)
