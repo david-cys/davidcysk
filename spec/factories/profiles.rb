@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :profile do
     location "Test location"
     tagline "Test tagline"
-    description "Test description"
+    sequence(:description){ |n| "Test description(#{n})" }
     user
   end
 end
