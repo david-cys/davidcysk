@@ -8,6 +8,9 @@
   Display name:
   = @profile.display_name
 %p
+  token
+  = @profile.token
+%p
   Avatar
   = image_tag @profile.avatar.url(:medium)
   = image_tag @profile.avatar.url(:thumb)

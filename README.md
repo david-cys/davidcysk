@@ -109,9 +109,14 @@ __potential user behaviour__
 - add names to user profiles. there are a few reasons to put it on profiles instead of users: keep the User model mainly for session/login control and Profile model for info for public use, avoid the dreaded nested forms when we make it user-editable.
 
 ---
+- add tokens to users and profiles. should I be using friendly_id here? would help when I do lookups, or should I rewrite the .find to use purely tokens?
+- for now I will just declare the primary key to be the token field. this might have had complications if I referenced the profile id elsewhere, but that is not the case. alternatively I could have declared it the primary key in the initial migration, or change the find calls in the controller to search for token instead of id
+
+---
 next steps
-- add tokens to users and profiles
 - spec out the api and tdd it
+  - list the general approaches: respond_to in existing controllers, roll a separate api controller, use Grape
+  - set up active model serializer
 - add remote image uploading
 - ? typeahead with api
 

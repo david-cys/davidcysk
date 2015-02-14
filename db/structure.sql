@@ -59,7 +59,8 @@ CREATE TABLE profiles (
     avatar_content_type character varying(255),
     avatar_file_size integer,
     avatar_updated_at timestamp without time zone,
-    name character varying(255)
+    name character varying(255),
+    token character varying(255) NOT NULL
 );
 
 
@@ -162,6 +163,13 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: index_profiles_on_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_profiles_on_token ON profiles USING btree (token);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -195,3 +203,5 @@ INSERT INTO schema_migrations (version) VALUES ('20150211002027');
 INSERT INTO schema_migrations (version) VALUES ('20150212001914');
 
 INSERT INTO schema_migrations (version) VALUES ('20150213140026');
+
+INSERT INTO schema_migrations (version) VALUES ('20150214100711');
