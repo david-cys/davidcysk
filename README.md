@@ -112,13 +112,18 @@ __potential user behaviour__
 - add tokens to users and profiles. should I be using friendly_id here? would help when I do lookups, or should I rewrite the .find to use purely tokens?
 - for now I will just declare the primary key to be the token field. this might have had complications if I referenced the profile id elsewhere, but that is not the case. alternatively I could have declared it the primary key in the initial migration, or change the find calls in the controller to search for token instead of id
 
----
-next steps
 - spec out the api and tdd it
   - list the general approaches: respond_to in existing controllers, roll a separate api controller, use Grape
+    respond_to is the simplest, but if we design for splitting the app into smaller components or want to namespace the routes then it gets really compliciated.
+    grape is cool especially if the api is going to have a much wider scope, but maybe overkill?
+    a separate api controller would be the middle-of-the-road safe choice here.
+  - we are going to skip versioning for now, but probably should add it in sometime
   - set up active model serializer
+---
+next steps
 - add remote image uploading
 - ? typeahead with api
+- versioning the api?
 
 ---
 __misc references__

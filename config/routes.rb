@@ -4,5 +4,9 @@ Kapi::Application.routes.draw do
   get 'profiles/search', :to => "profiles#search", :as => :search_profile
   resources :profiles#, :only => [:new, :edit]
 
+  namespace :api, defaults: { format: :json } do
+    resources :profiles, :only => [:show]
+  end
+
   root 'home#index'
 end
