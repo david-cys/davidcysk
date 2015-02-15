@@ -8,9 +8,24 @@ module Api
       if @profile
         render :json => @profile, :root => "user"
       else
-        render :json => { :errors => "Profile not found" },
-          :status => :not_found
+        render :json => { :errors => "Profile not found" }, :status => 404
       end
+    end
+
+    def update
+      @profile = Profile.find_by(:token => params[:id])
+      if @profile.blank?
+        render :json => { :errors => "Profile not found" }, :status => 404
+      elsif @profile.update(profile_params)
+        render :json => {}, :status => 200
+      else
+        render :json => { :errors => "Something went wrong" }, :status => 404
+      end
+    end
+
+    private
+    def profile_params
+      params.permit(:location, :tagline, :description, :avatar, :name)
     end
   end
 end

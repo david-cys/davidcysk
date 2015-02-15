@@ -119,6 +119,7 @@ __potential user behaviour__
     a separate api controller would be the middle-of-the-road safe choice here.
   - we are going to skip versioning for now, but probably should add it in sometime
   - set up active model serializer
+  - should the profile post request be namespaced?
 ---
 next steps
 - add remote image uploading
