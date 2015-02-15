@@ -6,7 +6,7 @@ module Api
       # we also only want to accept tokens and not numeric ids
       @profile = Profile.find_by(:token => params[:id])
       if @profile
-        render :json => @profile
+        render :json => @profile, :root => "user"
       else
         render :json => { :errors => "Profile not found" },
           :status => :not_found
