@@ -112,19 +112,26 @@ __potential user behaviour__
 - add tokens to users and profiles. should I be using friendly_id here? would help when I do lookups, or should I rewrite the .find to use purely tokens?
 - for now I will just declare the primary key to be the token field. this might have had complications if I referenced the profile id elsewhere, but that is not the case. alternatively I could have declared it the primary key in the initial migration, or change the find calls in the controller to search for token instead of id
 
+- set up active model serializer
 - spec out the api and tdd it
   - list the general approaches: respond_to in existing controllers, roll a separate api controller, use Grape
     respond_to is the simplest, but if we design for splitting the app into smaller components or want to namespace the routes then it gets really compliciated.
     grape is cool especially if the api is going to have a much wider scope, but maybe overkill?
     a separate api controller would be the middle-of-the-road safe choice here.
   - we are going to skip versioning for now, but probably should add it in sometime
-  - set up active model serializer
   - should the profile post request be namespaced?
+  - why are avatars seen separately from profiles?
+  - factorygirl and paperclip don't play well together, and uploading images to s3 in test environment is super dubious.
+  - we could create a poro called avatar and write methods inside to fetch the image from profile objects, but it seems like unnecessary obfuscation
+
 ---
 next steps
+- POST action for avatar
+- token auth?
 - add remote image uploading
-- ? typeahead with api
+- typeahead with api?
 - versioning the api?
+- should I be using instance variables in api controllers?
 
 ---
 __misc references__

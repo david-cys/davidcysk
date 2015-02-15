@@ -57,5 +57,6 @@ describe "API Profiles" do
       expect(profile1.tagline).not_to eq("update this tagline please")
     end
   end
+
 end
 
