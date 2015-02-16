@@ -19,6 +19,24 @@ module Api
         end
       end
     end
+
+    def update
+      @profile = Profile.find_by(:token => params[:id])
+
+      if @profile.blank?
+        render :json => { :errors => "Avatar not found" }, :status => 404
+      elsif @profile.update(avatar_params)
+        render :json => { :medium_url => @profile.avatar.url(:medium),
+                          :thumb_url => @profile.avatar.url(:thumb) }
+      else
+        render :json => { :errors => "Something went wrong" }, :status => 404
+      end
+    end
+
+    private
+    def avatar_params
+      params.permit(:avatar)
+    end
   end
 end
 

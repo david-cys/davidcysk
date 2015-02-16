@@ -9,6 +9,7 @@ Kapi::Application.routes.draw do
     post 'profiles/update', :to => 'profiles#update' # looks non-standard?
 
     resources :avatars, :only => [:show]
+    post 'avatars/upload', :to => 'avatars#update' # looks non-standard?
   end
 
   root 'home#index'

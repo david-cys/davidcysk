@@ -125,13 +125,16 @@ __potential user behaviour__
   - we could create a poro called avatar and write methods inside to fetch the image from profile objects, but it seems like unnecessary obfuscation
 
 ---
+- POST action for avatar, quite similar to profile update
+
+---
 next steps
-- POST action for avatar
-- token auth?
+- the json output of the avatar api does not match the profile api, no root object
+- hook up the original controllers to use the api instead
+- auth for update/upload api actions? either use the token auth plugin or just generate a token based on the plaintext password(or secret)...
 - add remote image uploading
 - typeahead with api?
 - versioning the api?
-- should I be using instance variables in api controllers?
 
 ---
 __misc references__
