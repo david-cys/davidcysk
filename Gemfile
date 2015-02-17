@@ -33,6 +33,7 @@ gem 'devise', '~> 3.2.2' # user authentication
 gem 'paperclip', '~> 4.2' # file uploads
 gem 'aws-sdk', '~> 1.5.7' # connect paperclip to s3
 gem 'active_model_serializers', '~> 0.8.1' # format json output
+gem 'rest_client', '~> 1.8.2' # to connect to our api
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

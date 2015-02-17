@@ -1,5 +1,5 @@
 class ProfileSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :tagline
+  attributes :id, :name, :email, :tagline, :description
 
   def id
     object.token

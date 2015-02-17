@@ -5,7 +5,7 @@ Kapi::Application.routes.draw do
   resources :profiles#, :only => [:new, :edit]
 
   namespace :api, defaults: { format: :json } do
-    resources :profiles, :only => [:show]
+    resources :profiles, :only => [:show, :index]
     post 'profiles/update', :to => 'profiles#update' # looks non-standard?
 
     resources :avatars, :only => [:show]

@@ -132,7 +132,11 @@ __potential user behaviour__
 - the chain looks like this: user > rails controller > service object > rails api > database
 - so the aim of this service object is to replace all the activerecord stuff out of the original profile controller and with calls to the PORO. as long as the feature test doesn't break, stuff should be working!
 - doing it step by step means moving the activerecord stuff into the PORO first, before ripping it out and calling the API?
-- looks kinda overcomplicated? are we supposed to assume you have no idea what the activerecord model actually is, in the controller? assuming there is no connection to the database is kind of dubious, you end up redfining all the activerecord methods in the service object?
+- looks kinda overcomplicated? are we supposed to assume you have no idea what the activerecord model actually is, in the controller? assuming there is no connection to the database is kind of dubious, you end up redfining all the activerecord methods in the service object? if this service actually splits into its own app/database, then you will have to build interfaces to serialize/deserialize all the activerecord objects.
+- all the current views are assuming there is a Profile object, whereas the api is just returning arbitrary json.
+- I cannot tell what port the test env is run on so the spec will query the api on development for now
+- webbrick blocks when you try to make a request to the api... single thread? stopgap measure is just run 2x dev server on different ports
+- to connect the PORO to the api, I need to use HTTParty, Faraday, Net::HTTP, or rest-client. I used rest-client to build the interface with sently so might be easier to just use that.
 
 ---
 next steps
