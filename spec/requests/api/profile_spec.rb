@@ -9,7 +9,6 @@ describe "API Profiles" do
 
       expect(response.status).to eq(200)
       body = JSON.parse(response.body)
-      p body
       expect(body["user"]["id"]).to eq(profile1.token)
       expect(body["user"]["name"]).to eq(profile1.name)
       expect(body["user"]["email"]).to eq(profile1.user.email)

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @profile = Profile.last
-    @random_profile = Profile.get_random(@profile)
+    @profile = ProfileService.get_last_updated
+    @random_profile = ProfileService.get_random_token(@profile)
   end
 end
 

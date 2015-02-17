@@ -128,11 +128,18 @@ __potential user behaviour__
 - POST action for avatar, quite similar to profile update
 
 ---
+- make a service object that will connect to the api. this service object will make a http request to the api and return the result. (seems like the term people are using here is 'microservices')
+- the chain looks like this: user > rails controller > service object > rails api > database
+- so the aim of this service object is to replace all the activerecord stuff out of the original profile controller and with calls to the PORO. as long as the feature test doesn't break, stuff should be working!
+- doing it step by step means moving the activerecord stuff into the PORO first, before ripping it out and calling the API?
+- looks kinda overcomplicated? are we supposed to assume you have no idea what the activerecord model actually is, in the controller? assuming there is no connection to the database is kind of dubious, you end up redfining all the activerecord methods in the service object?
+
+---
 next steps
-- the json output of the avatar api does not match the profile api, no root object
-- hook up the original controllers to use the api instead
+- hook up the original controllers to use the api instead. probably using a service object?
 - auth for update/upload api actions? either use the token auth plugin or just generate a token based on the plaintext password(or secret)...
 - add remote image uploading
+- the json output of the avatar api does not match the profile api, no root object?
 - typeahead with api?
 - versioning the api?
 
