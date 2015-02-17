@@ -138,9 +138,17 @@ __potential user behaviour__
 - webbrick blocks when you try to make a request to the api... single thread? stopgap measure is just run 2x dev server on different ports
 - to connect the PORO to the api, I need to use HTTParty, Faraday, Net::HTTP, or rest-client. I used rest-client to build the interface with sently so might be easier to just use that.
 
+__disaster! time to abandon ship__
+there are so many problems with this approach.
+- making http requests to your own application does not work: rails is not designed to serve concurrent requests
+- this structure of "user > rails controller serving the webpage > service object > rails api > database" seems like its intended to work when the app serving the web pages is a separate app from the API.
+- in this structure, you are going to have to re-define all sorts of ActiveRecord methods onto the service object. one possible solution is to use ActiveResource to convert the json into an object in the web app
+- the better choice to consuming this separate API is through something client-side like angular resource or backbone's view models. these frontend stuff will convert the json response from the API into usable objects (quite similar to what ActiveResource will do).
+- one side advantage of using a client-side framework to consume the API is your rails app will not have the previously mentioned concurrent requests problem
+- the service object in this implementation feels like unneeded complexity
+
 ---
 next steps
-- hook up the original controllers to use the api instead. probably using a service object?
 - auth for update/upload api actions? either use the token auth plugin or just generate a token based on the plaintext password(or secret)...
 - add remote image uploading
 - the json output of the avatar api does not match the profile api, no root object?
